@@ -1,0 +1,122 @@
+.new-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control input,
+textarea {
+    width: 28rem;
+    padding: 0.5rem 1rem;
+    height: 1rem;
+    border: 2px solid rgba(100, 95, 95, 0.537);
+    font-size: 1.01rem;
+    margin-bottom: 1.2rem;
+}
+
+.new-form label {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
+}
+
+.new-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-description textarea {
+    height: 12rem;
+    resize: none
+}
+
+.form-club {
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+    position: relative;
+}
+
+.new-price input {
+    width: 9rem ;
+}
+
+.new-country input {
+    width: 16rem ;
+}
+
+.form-btn-add {
+    width: 3.5rem;
+    height: 1.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.7rem;
+    color: white;
+    background-color: black;
+    border: 2px solid gray;
+}
+
+
+.form-btn-add:hover {
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+/* dajdhjadg */
+
+.form-control{
+    position: relative;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color:  #00a2ff;
+}
+
+.form-control textarea:focus {
+	outline: 0;
+	border-color: #00a2ff;
+}
+
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
+
+.form-control.success textarea {
+	border-color: #2ecc71;
+}
+
+.form-control.error textarea {
+	border-color: #e74c3c;
+}
+
+.form-control i {
+    font-size: 24px;
+	visibility: hidden;
+	position: absolute;
+	right: 10px;
+    bottom: 1.5rem;
+}
+
+.form-control.success i.fa-circle-check {
+	visibility: visible;
+}
+
+.form-control.error i.fa-circle-xmark {
+	visibility: visible;
+}
+
+.form-control .error-message {
+	color: #ff1900;
+	position: absolute;
+	left: 3px;
+    bottom: 0;
+	visibility: hidden;
+}
+
+.form-control.error .error-message  {
+	visibility: visible;
+}

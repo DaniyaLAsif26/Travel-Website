@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Musafir.com - All Listings</title>
+    <%- include('../includes/links.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+        <main>
+            <h1>All Listings</h1>
+            <div class="card-cont">
+                <% for(let listings of allListings) { %>
+                    <div class="card">
+                        <a href="/listings/<%= listings._id %>">
+                            <img src="<%= listings.image %>" alt="listing-image">
+                            <div class="card-body">
+                                <span class="card-title">
+                                    <b>
+                                        <%= listings.title %>
+                                    </b>
+                                </span>
+                            </a>
+                                <span class="card-star"><i class="fa-solid fa-star"></i>&nbsp;4.5</span>
+                        <span class="card-price">
+                            &#8377; <%= listings.price && listings.price.toLocaleString("en-IN") %>/night
+                        </span>
+                        
+
+                    </div>
+            </div>
+            <% } %>
+                </div>
+        </main>
+        <%- include('../includes/footer.ejs') %>
+
+</body>
+
+</html>

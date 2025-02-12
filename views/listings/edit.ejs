@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../includes/links.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+        <h1>Edit Listing</h1>
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="edit-form">
+            <div class="">
+                <label for="titlr">Title</label>
+                <input type="text" name="listing[title]" value="<%= listing.title %>">
+            </div>
+            <div class="">
+                <label for="description">Description</label>
+                <textarea type="text" name="listing[description]" cols="40"
+                    rows="12"><%= listing.description %></textarea>
+            </div>
+            <div class="">
+                <label for="image">Image URL</label>
+                <input type="text" name="listing[image]" value="<%= listing.image %>">
+            </div>
+            <div class="">
+                <label for="price">Price</label>
+                <input type="number" name="listing[price]" value="<%= listing.price %>">
+            </div>
+            <div class="">
+                <label for="location">Location</label>
+                <input type="text" name="listing[location]" value="<%= listing.location %>">
+            </div>
+            <div class="">
+                <label for="country">Country</label>
+                <input type="text" name="listing[country]" value="<%= listing.country %>">
+            </div>
+            <button class="form-btn-add">Add</button>
+        </form>
+        <%- include('../includes/footer.ejs') %>
+</body>
+
+</html>

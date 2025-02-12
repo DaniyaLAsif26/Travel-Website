@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musafir - <%= listing.title %>
+    </title>
+    <%- include('../includes/links.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+        <h1>Listing Details</h1>
+        <div class="show-cont">
+            <div class="show-img">
+                <img src="<%= listing.image %>" alt="">
+            </div>
+            <ul class="show-body">
+                <li class="show-title"> <b>
+                        <%= listing.title %>
+                    </b> </li>
+                <li>
+                    <%= listing.description %>
+                </li>
+                <li>
+                     <!-- &#8377;<%= listing.price.toLocaleString("en-IN") %> -->
+                     &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "Price not available" %>
+                </li>
+                <li>
+                    <%= listing.location %>
+                </li>
+                <li>
+                    <%= listing.country %>
+                </li>
+            </ul>
+            <div class="show-btn">
+                <button onclick="window.location.href='/listings/<%= listing._id %>/edit'" class="edit-btn form-btn-add">Edit</button>
+                <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                    <button class="del-btn form-btn-add">Delete</button>
+                </form>
+            </div>
+        </div>
+        <%- include('../includes/footer.ejs') %>
+</body>
+
+</html>

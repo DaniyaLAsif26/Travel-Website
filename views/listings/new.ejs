@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add New Listing</title>
     <%- include('../includes/links.ejs') %>
 </head>
 
 <body>
     <%- include('../includes/navbar.ejs') %>
-        <h1>New listing</h1>
+        <!-- <h1>New listing</h1> -->
 
         <form method="POST" action="/listings" class="new-form" id="form">
 
             <div class="new-title form-control">
                 <label for="title">Title</label>
-                <input type="text" name="listing[title]" placeholder="Enter Title" id="title" >
+                <input type="text" name="listing[title]" placeholder="Enter Title" id="title">
                 <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
                 <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
                 <span class="error-message">Error message</span>
@@ -25,7 +25,7 @@
             <div class="new-description form-control ">
                 <label for="description">Description</label>
                 <textarea name="listing[description]" placeholder="Enter Description" cols="40" rows="12"
-                    id="description" ></textarea>
+                    id="description"></textarea>
                 <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
                 <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
                 <span class="error-message">Error message</span>
@@ -33,33 +33,33 @@
 
             <div class="new-image form-control ">
                 <label for="image">Image URL</label>
-                <input type="text" name="listing[image]" placeholder="Enter image URL/Link" id="image" >
+                <input type="text" name="listing[image]" placeholder="Enter image URL/Link" id="image">
                 <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
                 <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
                 <span class="error-message">Error message</span>
             </div>
 
-            <div class="form-club">
-                <div class="new-price form-control ">
-                    <label for="price">Price</label>
-                     <input  name="listing[price]" placeholder="Enter price" id="price" > 
-                    <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
-                    <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
-                    <span class="error-message">Price cannot be empty</span>
-                </div>
 
-                <div class="new-country form-control ">
-                    <label for="country">Country</label>
-                    <input type="text" name="listing[country]" placeholder="Enter Country" id="country" >
-                    <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
-                    <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
-                    <span class="error-message">Error message</span>
-                </div>
+            <div class="new-price form-control ">
+                <label for="price">Price</label>
+                <input name="listing[price]" placeholder="Enter price" id="price">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Price cannot be empty</span>
             </div>
+
+            <div class="new-country form-control ">
+                <label for="country">Country</label>
+                <input type="text" name="listing[country]" placeholder="Enter Country" id="country">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Error message</span>
+            </div>
+
 
             <div class="new-location form-control">
                 <label for="location-form">Location</label>
-                <input type="text" name="listing[location]" placeholder="Enter Location" id="location-form" >
+                <input type="text" name="listing[location]" placeholder="Enter Location" id="location-form">
                 <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
                 <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
                 <span class="error-message">Error message</span>

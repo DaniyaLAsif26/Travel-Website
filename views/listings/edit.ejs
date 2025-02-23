@@ -10,12 +10,16 @@
 
 <body>
     <%- include('../includes/navbar.ejs') %>
+
         <h1>Edit Listing</h1>
-        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="edit-form">
+
+        <!-- <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="edit-form">
+
             <div class="">
-                <label for="titlr">Title</label>
+                <label for="title">Title</label>
                 <input type="text" name="listing[title]" value="<%= listing.title %>">
             </div>
+
             <div class="">
                 <label for="description">Description</label>
                 <textarea type="text" name="listing[description]" cols="40"
@@ -38,7 +42,69 @@
                 <input type="text" name="listing[country]" value="<%= listing.country %>">
             </div>
             <button class="form-btn-add">Add</button>
+        </form> -->
+
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="new-form" id="form">
+
+            <div class="new-title form-control">
+                <label for="title">Title</label>
+                <input type="text" name="listing[title]" placeholder="Enter Title" id="title"
+                    value="<%= listing.title %>">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Error message</span>
+            </div>
+
+            <div class="new-description form-control ">
+                <label for="description">Description</label>
+                <textarea name="listing[description]" placeholder="Enter Description" cols="40" rows="12"
+                    id="description"><%= listing.description %></textarea>
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Error message</span>
+            </div>
+
+            <div class="new-image form-control ">
+                <label for="image">Image URL</label>
+                <input type="text" name="listing[image]" placeholder="Enter image URL/Link" id="image"
+                    value="<%= listing.image %>">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Error message</span>
+            </div>
+
+
+            <div class="new-price form-control ">
+                <label for="price">Price</label>
+                <input name="listing[price]" placeholder="Enter price" id="price" value="<%= listing.price %>">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Price cannot be empty</span>
+            </div>
+
+            <div class="new-country form-control ">
+                <label for="country">Country</label>
+                <input type="text" name="listing[country]" placeholder="Enter Country" id="country"
+                    value="<%= listing.country %>">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Error message</span>
+            </div>
+
+
+            <div class="new-location form-control">
+                <label for="location-form">Location</label>
+                <input type="text" name="listing[location]" placeholder="Enter Location" id="location-form"
+                    value="<%= listing.location %>">
+                <i class="fa-regular fa-circle-check" style="color: #63E6BE;"></i>
+                <i class="fa-regular fa-circle-xmark" style="color: #ff0000;"></i>
+                <span class="error-message">Error message</span>
+            </div>
+
+            <button class="form-btn-add">Add</button>
+
         </form>
+
         <%- include('../includes/footer.ejs') %>
 </body>
 

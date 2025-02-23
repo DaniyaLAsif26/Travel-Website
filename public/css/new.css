@@ -31,37 +31,23 @@ textarea {
     resize: none
 }
 
-.form-club {
-    display: flex;
-    flex-direction: row !important;
-    gap: 10px;
-    position: relative;
-}
-
-.new-price input {
-    width: 9rem ;
-}
-
-.new-country input {
-    width: 16rem ;
-}
-
 .form-btn-add {
-    width: 3.5rem;
-    height: 1.8rem;
-    font-size: 1.2rem;
-    margin-bottom: 1.7rem;
+    width: 4.5rem;
+    height: 2rem;
+    border: 1px solid rgb(67, 67, 67);
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 20px;
+    background-color: rgb(0, 0, 0);
     color: white;
-    background-color: black;
-    border: 2px solid gray;
+    margin: 1rem 0rem 2rem 0rem;
 }
-
 
 .form-btn-add:hover {
     background-color: rgba(0, 0, 0, 0.637);
 }
 
-/* dajdhjadg */
+/* validation message */
 
 .form-control{
     position: relative;

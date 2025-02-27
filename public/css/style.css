@@ -241,3 +241,59 @@ footer {
 .error-cont i {
     font-size: 3rem;
 }
+
+/* review */
+
+.review{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    border-top: 1px solid rgba(128, 128, 128, 0.42); ;
+}
+
+.review-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    flex-direction: column;  
+    border-right: 1px solid rgba(128, 128, 128, 0.42);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.review-cont label{
+    font-size: 1.2rem;
+}
+
+h4{
+    font-size: 1.6rem;
+    margin: 20px 0px;
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 2rem;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.comment textarea {
+    height: 12rem;
+    resize: none
+}
+
+.review-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

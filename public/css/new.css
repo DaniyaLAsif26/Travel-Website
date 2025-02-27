@@ -41,6 +41,9 @@ textarea {
     background-color: rgb(0, 0, 0);
     color: white;
     margin: 1rem 0rem 2rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-btn-add:hover {

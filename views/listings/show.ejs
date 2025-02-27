@@ -26,10 +26,11 @@
                 </li>
                 <li class="show-price">
                     <i class="fa-solid fa-dollar-sign"></i>
-                     &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "Price not available" %>
+                    &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "Price not available" %>
                 </li>
                 <li class="show-location">
-                    <i class="fa-solid fa-location-dot"></i> <%= listing.location %>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <%= listing.location %>
                 </li>
                 <li class="show-country">
                     <i class="fa-solid fa-earth-americas"></i>
@@ -42,6 +43,31 @@
                 <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
                     <button class="del-btn">Delete</button>
                 </form>
+            </div>
+        </div>
+
+        <div class="review">
+            <div class="review-cont">
+                <h4>Leave a Review</h4>
+                <form action="">
+                    <div class="rating">
+                        <label for="rating">Rating</label>
+                        <input type="range" name="review[rating]" id="rating" min="1" max="5" class="form-range">
+                    </div>
+                    <div class="comment">
+                        <label for="comment">Leave a Review</label>
+                        <textarea name="review[comment]" id="comment"></textarea>
+                    </div>
+
+                    <div class="review-btn">
+                        <button type="submit" class="form-btn-add">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="review-show">
+                <h3>Customer Reviews</h3>
             </div>
         </div>
         <%- include('../includes/footer.ejs') %>

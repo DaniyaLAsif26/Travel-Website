@@ -49,14 +49,14 @@
         <div class="review">
             <div class="review-cont">
                 <h4>Leave a Review</h4>
-                <form action="">
+                <form action="/listings/<%= listing._id %>/reviews" method="POST">
                     <div class="rating">
                         <label for="rating">Rating</label>
-                        <input type="range" name="review[rating]" id="rating" min="1" max="5" class="form-range">
+                        <input type="range" name="review[rating]" id="rating" min="1" max="5" >
                     </div>
                     <div class="comment">
                         <label for="comment">Leave a Review</label>
-                        <textarea name="review[comment]" id="comment"></textarea>
+                        <textarea name="review[comment]" id="comment" required></textarea>
                     </div>
 
                     <div class="review-btn">
@@ -67,7 +67,23 @@
             </div>
 
             <div class="review-show">
-                <h3>Customer Reviews</h3>
+                <h4>Customer Reviews</h4>
+                <div class="review-show-cont">
+                    <% for(review of listing.reviews) { %>
+                        <div class="review-card">
+                            <div class="review-comment">
+                                <%- review.comment %>
+                            </div>
+                            <div class="review-rating">
+                                <%- review.rating %> <i class="fa-solid fa-star"></i>
+                            </div>
+                            <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                                <button class="del-btn ">Delete</button>
+                            </form>
+        
+                        </div>
+                        <% } %>
+                </div>
             </div>
         </div>
         <%- include('../includes/footer.ejs') %>

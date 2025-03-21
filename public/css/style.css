@@ -319,3 +319,35 @@ h4{
     border-radius: 9px;
     font-size: 1.3rem;
 }
+
+/* flash message */
+.flash{
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    background-color: #85e782;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    height: 2rem;
+    margin: 1rem 15rem;
+    padding: 1rem 3rem;
+    border: 2px solid rgb(0, 81, 0);
+    gap: 2rem;
+    border-radius: 8px;
+}
+
+.flash-error{
+    border: 2px solid rgba(255, 0, 0, 0.548);
+    background-color: #ff5e71b3;
+    color: rgb(0, 0, 0);
+}
+
+.flash button{
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}

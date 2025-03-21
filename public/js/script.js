@@ -122,3 +122,10 @@ function resetFormStyles() {
         span.innerText = '';
     });
 }
+
+// flash message
+
+function closeMessage() {
+    const flashMessage = document.getElementsByClassName('flash')[0];
+    flashMessage.style.display = 'none';
+}

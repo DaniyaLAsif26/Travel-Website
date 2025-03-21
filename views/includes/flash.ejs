@@ -1,0 +1,14 @@
+<% if (success && success.length) { %>
+
+<div class="flash flash-success">
+    <div class="">  <%= success %> </div>
+   <button onclick="closeMessage()"> X </button>
+</div>
+<% } %>
+
+<% if (error && error.length) { %>
+<div class="flash flash-error">
+    <div class="">  <%= error  %> </div>
+   <button onclick="closeMessage()"> X </button>
+</div>
+<% } %>

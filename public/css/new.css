@@ -12,7 +12,7 @@ textarea {
     height: 1rem;
     border: 2px solid rgba(100, 95, 95, 0.537);
     font-size: 1.01rem;
-    margin-bottom: 1.2rem;
+    /* margin-bottom: 1rem; */
 }
 
 .new-form label {

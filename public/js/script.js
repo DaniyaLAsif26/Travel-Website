@@ -125,7 +125,7 @@ function resetFormStyles() {
 
 // flash message
 
-function closeMessage() {
-    const flashMessage = document.getElementsByClassName('flash')[0];
-    flashMessage.style.display = 'none';
+function closeMessage(button) {
+    const flashDiv = button.parentElement;
+        flashDiv.style.display = 'none';
 }

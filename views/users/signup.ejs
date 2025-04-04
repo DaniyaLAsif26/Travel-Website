@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../includes/links.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+
+    <%- include('../includes/flash.ejs') %>
+
+        <div class="outer-cont">
+            <div class="signup-cont">
+                <h1>Sign up</h1>
+                <form action="/user/signup" method="POST" class="signup-form new-form form-control">
+                    <div>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Enter username" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter password" required>
+                    </div>
+                    <div>
+                        <label for="password">Re-enter password</label>
+                        <input type="password" name="re_password" id="re-password" placeholder="Re-enter password" required>
+                    </div>
+                    <button class="form-btn-sign-in">Sign up</button>
+                </form>
+                <p>
+                    Already have an account? <a href="/user/login"> Log in </a></p>
+            </div>
+        </div>
+        <%- include('../includes/footer.ejs') %>
+
+</body>
+
+</html>

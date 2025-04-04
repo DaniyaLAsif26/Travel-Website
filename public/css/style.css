@@ -8,7 +8,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px;
+    margin: 1rem 0rem;
 }
 
 /* navbar */
@@ -22,6 +22,7 @@ h1 {
     position: sticky;
     top: 0;
     background-color: #fff;
+    z-index: 1;
 }
 
 .logo img {
@@ -247,23 +248,24 @@ footer {
 
 /* review */
 
-.review{
+.review {
     display: grid;
     grid-template-columns: 40% 60%;
-    border-top: 1px solid rgba(128, 128, 128, 0.42); ;
+    border-top: 1px solid rgba(128, 128, 128, 0.42);
+    ;
 }
 
-.review-cont{ 
+.review-cont {
     border-right: 1px solid rgba(128, 128, 128, 0.42);
     box-sizing: border-box;
     overflow: hidden;
 }
 
-.review-cont label{
+.review-cont label {
     font-size: 1.2rem;
 }
 
-h4{
+h4 {
     font-size: 1.6rem;
     margin: 20px 0px;
     display: flex;
@@ -271,7 +273,7 @@ h4{
     align-items: center;
 }
 
-.rating{
+.rating {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,7 +282,7 @@ h4{
     margin-bottom: 2rem;
 }
 
-.comment{
+.comment {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -294,7 +296,7 @@ h4{
     resize: none
 }
 
-.review-btn{
+.review-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,7 +310,7 @@ h4{
     gap: 1rem;
 }
 
-.review-card{
+.review-card {
     border: 1px solid black;
     padding: 0.7rem 1.8rem;
     display: flex;
@@ -321,9 +323,9 @@ h4{
 }
 
 /* flash message */
-.flash{
+.flash {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     align-items: center;
     background-color: #85e782;
     color: rgb(0, 0, 0);
@@ -336,18 +338,54 @@ h4{
     border-radius: 8px;
 }
 
-.flash-error{
+.flash-error {
     border: 2px solid rgba(255, 0, 0, 0.548);
     background-color: #ff5e71b3;
     color: rgb(0, 0, 0);
 }
 
-.flash button{
+.flash button {
     background: none;
     border: none;
     font-size: 1.5rem;
     text-align: center;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+/* signup user */
+
+.form-btn-sign-in {
+    margin: 1rem 0rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    font-weight: 300;
+    background-color: yellow;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.signup-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid grey;
+    padding: 2rem ;
+    margin: 3.5rem 3.5rem;
+    border-radius: 9px;
+}
+
+.signup-cont h1{
+margin: 0;
+}
+
+.outer-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }

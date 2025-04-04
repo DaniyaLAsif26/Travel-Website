@@ -2,13 +2,13 @@
 
 <div class="flash flash-success">
     <div class="">  <%= success %> </div>
-   <button onclick="closeMessage()"> X </button>
+   <button onclick="closeMessage(this)"> X </button>
 </div>
 <% } %>
 
 <% if (error && error.length) { %>
 <div class="flash flash-error">
     <div class="">  <%= error  %> </div>
-   <button onclick="closeMessage()"> X </button>
+    <button onclick="closeMessage(this)"> X </button>
 </div>
 <% } %>

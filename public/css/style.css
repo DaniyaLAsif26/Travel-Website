@@ -17,7 +17,7 @@ h1 {
     height: 75px;
     border-bottom: 2px solid rgba(128, 128, 128, 0.42);
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -35,6 +35,16 @@ h1 {
     margin: 0px 10px;
     font-size: 18px;
     color: black;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-right {
+    margin-right: 10px;
 }
 
 /* footer */
@@ -273,6 +283,14 @@ h4 {
     align-items: center;
 }
 
+.review-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.2rem;
+}
+
 .rating {
     display: flex;
     align-items: center;
@@ -373,16 +391,16 @@ h4 {
     align-items: center;
     flex-direction: column;
     border: 2px solid grey;
-    padding: 2rem ;
+    padding: 2rem;
     margin: 3.5rem 3.5rem;
     border-radius: 9px;
 }
 
-.signup-cont h1{
-margin: 0;
+.signup-cont h1 {
+    margin: 0;
 }
 
-.outer-cont{
+.outer-cont {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,7 +1,16 @@
 <nav class="navbar">
-    <div class="logo"><a href="/listings"><img src="/assets/logo.png" alt=""></a></div>
-    <a href="/">Home</a>
-    <a href="/listings">All listings</a>
-    <a href="/listings/new">New Listing</a>
-    <a href="/user/signup">Sign up</a>
+    <div class="nav-left">
+        <div class="logo"><a href="/listings"><img src="/assets/logo.png" alt=""></a></div>
+        <a href="/">Home</a>
+        <a href="/listings">All listings</a>
+        <a href="/listings/new">New Listing</a>
+    </div>
+    <div class="nav-right">
+        <% if(!currUser) { %>
+        <a href="/user/login">Log in</a>
+        <% } %> 
+        <% if(currUser) { %>
+        <a href="/user/logout">Log out</a>
+        <% } %>
+    </div>
 </nav>

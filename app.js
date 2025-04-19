@@ -80,16 +80,6 @@ app.get("/", (req, res) => {
     res.send("Home page")
 })
 
-// demo user
-// app.get("/demo", async (req, res) => {
-//     let fakeUser = new User({
-//         username: "demoUser",
-//         email: "123@gmail.com"
-//     })
-//     let newUser = await User.register(fakeUser, "password")
-//     res.send(newUser)
-// })
-
 // Listing Route
 const listingsRouter = require("./routes/listing.js")
 app.use("/listings", listingsRouter)

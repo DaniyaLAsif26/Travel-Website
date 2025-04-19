@@ -5,71 +5,24 @@ const passport = require("passport")
 const wrapAsync = require("../utils/wrapAsync.js");
 const { saveRedirectURL } = require("../middleware.js");
 
-// signup user
-router.get("/signup", wrapAsync(async (req, res) => {
-    res.render("users/signup.ejs")
-}))
+const UserController = require("../controllers/users.js")
 
-router.post("/signup", wrapAsync(async (req, res) => {
-    console.log(req.body)
-    try {
-        let { username, email, password, re_password } = req.body
-        if (password === re_password) {
-            const newUser = new User({ username, email })
-            const registeredUser = await User.register(newUser, password)
-            req.login(registeredUser, (err) => {
-                if (err) {
-                    return next(err);
-                }
-                req.flash("success", "Welcome to Musafir " + username)
-                res.redirect("/listings")
-            })
-        }
-        else {
-            req.flash("error", "Passwords do not match")
-            res.redirect("/user/signup")
-        }
-    }
-    catch (e) {
-        console.log(e.message)
-        req.flash("error", "User already exists")
-        res.redirect("/user/signup")
-    }
-}))
+//SignUp Routes
+router
+    .route("/signup")
+    .get(wrapAsync(UserController.signUpForm))// signup user Form
+    .post(wrapAsync(UserController.signupUser))// signup user
 
-// login user
-
-router.get("/login", async (req, res) => {
-    res.render("users/login.ejs")
-})
-
-router.post("/login", saveRedirectURL, passport.authenticate('local', {
-    failureRedirect: '/user/login',
-    failureFlash: true
-}), wrapAsync(async (req, res) => {
-    let { username } = req.body;
-    req.flash("success", "Welcome back! " + username);
-
-    // Default redirect is to listings page
-    let redirectUrl = res.locals.redirectURL || "/listings";
-
-    // Handle review form (POST) and delete (DELETE) redirect URLs
-    if (redirectUrl.includes("/reviews")) {
-        // Remove everything from "/reviews" onward
-        const index = redirectUrl.indexOf("/reviews");
-        redirectUrl = redirectUrl.slice(0, index);
-    }
-
-    res.redirect(redirectUrl);  // Redirect to the right page
-}));
+//LogIn Routes
+router
+    .route("/login")
+    .get(UserController.logInForm)// login user Form
+    .post(saveRedirectURL, passport.authenticate('local', {
+        failureRedirect: '/user/login',
+        failureFlash: true
+    }), wrapAsync(UserController.loginUser))// login user
 
 //logout user
-router.get("/logout", (req, res) => {
-    req.logout((err) => {
-        if (err) { return next(err); }
-        req.flash("success", "Logged out successfully!")
-        res.redirect("/listings")
-    });
-})
+router.get("/logout", UserController.logoutUser)
 
 module.exports = router

@@ -62,9 +62,25 @@
                 <div class="review-cont">
                     <h4>Leave a Review</h4>
                     <form action="/listings/<%= listing._id %>/reviews" method="POST">
-                        <div class="rating">
-                            <label for="rating">Rating</label>
+                        <!-- <div class="rating">
                             <input type="range" name="review[rating]" id="rating" min="1" max="5">
+                        </div> -->
+                        <div class="rating">
+                            <fieldset class="starability-heartbeat">
+                                <legend>Rating:</legend>
+                                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
+                                    aria-label="No rating." />
+                                <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                                <label for="first-rate1" title="Terrible">1 star</label>
+                                <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                                <label for="first-rate2" title="Not good">2 stars</label>
+                                <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                                <label for="first-rate3" title="Average">3 stars</label>
+                                <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                                <label for="first-rate4" title="Very good">4 stars</label>
+                                <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                                <label for="first-rate5" title="Amazing">5 stars</label>
+                            </fieldset>
                         </div>
                         <div class="comment">
                             <label for="comment">Leave a Review</label>
@@ -92,7 +108,8 @@
                                     <%- review.comment %>
                                 </div>
                                 <div class="review-rating">
-                                    <%- review.rating %> <i class="fa-solid fa-star"></i>
+                                    <p class="starability-result" data-rating="<%- review.rating %>">
+                                    </p>
                                 </div>
                                 <% if(currUser && currUser._id.equals(review.author._id)) { %>
                                     <form method="POST"

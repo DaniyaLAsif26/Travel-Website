@@ -20,7 +20,7 @@ form.addEventListener('submit', e => {
 
         form.submit()
     }
-})
+});
 
 function checkInputs() {
     let isValid = true
@@ -58,12 +58,12 @@ function checkInputs() {
         setSuccess(description)
     }
 
-    // if (imageValue === '') {
-    //     setError(image, 'Please enter image URL')
-    //     isValid = false
-    // } else {
-    //     setSuccess(image)
-    // }
+    if (imageValue === '') {
+        setError(image, 'Please enter a file')
+        isValid = false
+    } else {
+        setSuccess(image)
+    }
 
     if (priceValue === '') {
         setError(price, 'Price cannot be empty');

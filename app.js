@@ -1,12 +1,12 @@
+    if(process.env.NODE_ENV !== "production") { 
+        require("dotenv").config()
+    }  
+
 const express = require("express")
 const app = express()
 const path = require("path")
 app.use(express.json());
 
-// const Listing = require("./models/listing.js")
-// const Review = require("./models/review.js")
-// const wrapAsync = require("./utils/wrapAsync.js")
-// const { listingSchema, reviewSchema } = require("./utils/schema.js")
 const expressError = require("./utils/expressError.js")
 
 const flash = require("connect-flash")

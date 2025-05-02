@@ -36,6 +36,49 @@
     width: 30px;
 }
 
+/* smallet static stars */
+.starability-result {
+    position: relative;
+    width: 125px;
+    /* 5 stars × 25px */
+    height: 25px;
+    background-size: 25px auto;
+    font-size: 0.1em;
+    color: transparent;
+}
+
+.starability-result:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    height: 25px;
+    background-size: 25px auto;
+    background-position: 0 -25px;
+}
+
+.starability-result[data-rating="5"]::after {
+    width: 125px;
+}
+
+.starability-result[data-rating="4"]::after {
+    width: 100px;
+}
+
+.starability-result[data-rating="3"]::after {
+    width: 75px;
+}
+
+.starability-result[data-rating="2"]::after {
+    width: 50px;
+}
+
+.starability-result[data-rating="1"]::after {
+    width: 25px;
+}
+
+
+/* ************************************* */
+
 @media screen and (-webkit-min-device-pixel-ratio: 2),
 screen and (min-resolution: 192dpi) {
     .starability-result {

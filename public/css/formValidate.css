@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #000000;
+    font-weight: bold;
 }
 
 .form-control input {
@@ -10,8 +12,8 @@
     padding: 0.5rem 1rem;
     height: 1rem;
     border: 2px solid rgba(100, 95, 95, 0.537);
-    font-size: 1.01rem;
-    margin-bottom: 1.3rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .form-control #image{
@@ -36,12 +38,12 @@
     min-height: 12rem;
     width: 30rem;
     padding: 0.5rem 1rem;
-    font-size: 1.01rem;
+    font-size: 1.1rem;
     box-sizing: border-box;
     resize: none;
     border: 2px solid rgba(100, 95, 95, 0.537);
     transition: border-color 0.2s ease;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1rem;
 }
 
 .form-btn-add {

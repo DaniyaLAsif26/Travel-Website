@@ -2,9 +2,24 @@ const Listing = require("../models/listing")
 
 //index route
 module.exports.indexListing = async (req, res, next) => {
-    const allListings = await Listing.find()
-    res.render("listings/index.ejs", { allListings })
-}
+    let allListings = await Listing.find().populate("reviews");
+
+    allListings = allListings.map((listing) => {
+        const reviews = listing.reviews;
+        const total = reviews.length;
+        const avg = total > 0
+            ? (reviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1)
+            : null;
+
+        return {
+            ...listing.toObject(),
+            avgRating: avg,
+            totalReviews: total
+        };
+    });
+
+    res.render("listings/index.ejs", { allListings });
+};
 
 //create route
 module.exports.createListing = async (req, res, next) => {
@@ -20,23 +35,88 @@ module.exports.createListing = async (req, res, next) => {
 }
 
 //show route
+// module.exports.showListing = async (req, res, next) => {
+//     let { id } = req.params
+//     const listing = await Listing.findById(id)
+//         .populate({
+//             path: "reviews",
+//             populate: {
+//                 path:
+//                     "author"
+//             },
+//         })
+//         .populate("owner")
+//     if (!listing) {
+//         req.flash("error", "Cannot find listing")
+//         res.redirect("/listings")
+//     }
+
+//     const dates = listing.reviews.map(review => {
+//         return review.createdAt.toLocaleDateString('en-US', {
+//             year: 'numeric',
+//             month: 'short',
+//             day: 'numeric'
+//         });
+//     });
+    
+//     listing = listing.map((listing) => {
+//         const reviews = listing.reviews;
+//         const total = reviews.length;
+//         const avg = total > 0
+//             ? (reviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1)
+//             : null;
+
+//         return {
+//             ...listing.toObject(),
+//             avgRating: avg,
+//             totalReviews: total
+//         };
+//     });
+
+//     res.render("listings/show.ejs", { listing, dates })
+// }
+
 module.exports.showListing = async (req, res, next) => {
-    let { id } = req.params
-    const listing = await Listing.findById(id)
+    let { id } = req.params;
+    let listing = await Listing.findById(id)
         .populate({
             path: "reviews",
             populate: {
-                path:
-                    "author"
+                path: "author"
             },
         })
-        .populate("owner")
+        .populate("owner");
+
     if (!listing) {
-        req.flash("error", "Cannot find listing")
-        res.redirect("/listings")
+        req.flash("error", "Cannot find listing");
+        return res.redirect("/listings");
     }
-    res.render("listings/show.ejs", { listing })
-}
+
+    // Format review creation dates
+    const dates = listing.reviews.map(review => {
+        return review.createdAt.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    });
+
+    // Calculate total reviews and average rating
+    const total = listing.reviews.length;
+    const avg = total > 0
+        ? (listing.reviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1)
+        : null;
+
+    // Convert to plain object and add computed fields
+    const listingWithRatings = {
+        ...listing.toObject(),
+        avgRating: avg,
+        totalReviews: total
+    };
+
+    res.render("listings/show.ejs", { listing: listingWithRatings, dates });
+};
+
 
 //edit route
 module.exports.editForm = async (req, res, next) => {

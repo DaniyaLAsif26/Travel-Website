@@ -1,16 +1,42 @@
 <nav class="navbar">
     <div class="nav-left">
         <div class="logo"><a href="/listings"><img src="/assets/logo.png" alt=""></a></div>
-        <a href="/listings">Home</a>
-        <a href="/listings">All listings</a>
-        <a href="/listings/new">New Listing</a>
+        <a href="/listings">Explore</a>
+    </div>
+    <div class="nav-center">
+        <form action="" role="search">
+            <div class=""> <input type="search"> </div>
+            <div class=""> <button class="srch-btn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+        </form>
     </div>
     <div class="nav-right">
-        <% if(!currUser) { %>
-        <a href="/user/login">Log in</a>
-        <% } %> 
-        <% if(currUser) { %>
-        <a href="/user/logout">Log out</a>
-        <% } %>
+        <a href="/listings/new">Rent out your home</a>
+        <div class="user-icon">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="drop">
+            <div class="drop-down">
+                <% if(currUser) { %>
+                    <div class="drop-username">
+                        Hello, <b><%= currUser.username %></b>
+                    </div>
+                    <div class="line"></div>
+                    <% } %>
+                        <% if(!currUser) { %>
+                            <a href="/user/login">Log in</a>
+                            <a href="/user/signup">Sign Up</a>
+                            <div class="line"></div>
+                            <% } %>
+                                <div class="about"><a href="/aboutus">About us</a></div>
+                                <a href="/aboutus">Help center</a>
+
+                                <% if(currUser) { %>
+                                    <div class="line"></div>
+                                    <a href="/user/logout" class="logout">Log out</a>
+                                    <% } %>
+            </div>
+        </div>
     </div>
+    
 </nav>

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Comic+Relief:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Comic+Relief:wght@400;700&family=Gidole&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Comic+Relief:wght@400;700&family=Gidole&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Comic+Relief:wght@400;700&family=Gidole&family=Kanchenjunga:wght@400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+    --main-bg-color: #bd6418;
+    --font1: "Baloo Bhaina 2", cursive;
+    --font2: "Roboto", sans-serif;
+    --font3: "Comic Relief", cursive;
+    --font4: "Gidole", sans-serif;
+    --font5: "Rubik", sans-serif;
+    --font6: "Kanchenjunga", sans-serif;
+}
+
+.navbar {
+    font-family: var(--font2);
+}
+
+.card-body {
+    font-family: var(--font3);
+}
+
+.filter {
+    font-family: var(--font2);
+}
+
+.card-price {
+    font-family: var(--font2);
+}
+
+footer h3 {
+    font-family: var(--font4);
+}
+
+footer ul {
+    font-family: var(--font1);
+    opacity: 0.85;
+}
+
+.show-cont{
+    font-family: var(--font5);
+}
+
+.review{
+    font-family: var(--font6);
+}
+
+.review-comment{
+    font-family: var(--font5);
+}
+
+h1{
+    font-family: var(--font6);
+}
+
+.login-cont , .signup-cont , .new-form , .edit-form{
+    font-family: var(--font4);
+}
+
+.flash{
+    font-family: var(--font1);
+}

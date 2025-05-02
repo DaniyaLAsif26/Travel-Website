@@ -1,21 +1,26 @@
 * {
     margin: 0;
     padding: 0;
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
 }
 
+body {
+    background-color: #e7e7e7b1;
+}
 
 h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0rem;
+    margin: 1.5rem 0rem;
 }
 
 /* navbar */
 
 .navbar {
-    height: 75px;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.42);
+    height: 80px;
+    border-bottom: 2px solid rgba(192, 192, 192, 0.42);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +38,7 @@ h1 {
 .navbar a {
     text-decoration: none;
     margin: 0px 10px;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: black;
 }
 
@@ -41,10 +46,110 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 2rem;
 }
 
 .nav-right {
-    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-center form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-center input {
+    width: 26rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    padding: 1rem 1.3rem;
+    font-size: 1.3rem;
+}
+
+.nav-center button {
+    width: 2.5rem;
+    height: 2.7rem;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: rgb(255, 105, 105);
+    border: none;
+}
+
+.srch-btn i {
+    font-size: 1.3rem;
+    color: whitesmoke;
+}
+
+.nav-center input:hover {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.nav-center button:hover {
+    background-color: rgb(214, 77, 77);
+    cursor: pointer;
+}
+
+.user-icon {
+    margin-right: 2.3rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    border: 2px solid rgb(192, 192, 192);
+    border-radius: 3rem;
+    padding: 0.6rem 0.7rem;
+    cursor: pointer;
+}
+
+.fa-circle-user {
+    font-size: 2rem;
+    color: black;
+}
+
+.drop-down {
+    background-color: white;
+    position: absolute;
+    padding: 1.2rem 0.8rem;
+    width: 12rem;
+    border: 1px solid gray;
+    right: 1.7rem;
+    top: 4.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 0.6rem;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.drop {
+    display: none;
+}
+
+.line {
+    height: 1px;
+    background-color: gray;
+    position: relative;
+    width: 100%;
+}
+
+.drop-username {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 /* footer */
@@ -94,6 +199,10 @@ footer {
     height: 30px;
 }
 
+.footer-icons a{
+    color: black;
+}
+
 .footer-end {
     display: flex;
     justify-content: center;
@@ -103,15 +212,17 @@ footer {
 
 /* main container */
 
-
 .card {
-    height: 24rem;
+    height: 26rem;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+
 }
 
 .card img {
     width: 19rem;
     height: 18rem;
-    border-radius: 20px;
+    border-radius: 26px;
 }
 
 .card-cont {
@@ -120,15 +231,39 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 3rem;
-    gap: 0.75rem;
 }
 
 .card-body {
     padding: 0.3rem 0.4rem;
-    display: grid;
-    grid-template-columns: 83% 17%;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
     width: 18rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.card-star {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.card-star i {
+    color: #da9c00;
+    font-size: 1rem;
+}
+
+.card-price {
+    font-size: 1.15rem;
+    margin-top: 0.25rem;
+    color: rgb(97, 97, 97);
 }
 
 .card a {
@@ -136,19 +271,16 @@ footer {
     color: black;
 }
 
-.card-title {
-    font-size: 1.1rem;
+.card-star a i {
+    color: blue;
+    text-decoration: underline;
 }
 
-.card-star i {
-    font-size: 14px;
-}
-
-.card-price {
-    font-size: 0.9rem;
-    color: rgb(97, 97, 97);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 0.4rem;
+.card-star a {
+    color: blue;
+    text-decoration: underline;
+    padding-left: 0.3rem;
+    opacity: 0.7;
 }
 
 /* show route */
@@ -176,12 +308,13 @@ footer {
     width: 55rem;
     gap: 0.3rem;
     font-size: 1.3rem;
+    position: relative;
 }
 
 .show-description {
     font-weight: 500;
     margin-bottom: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .show-price {
@@ -232,6 +365,27 @@ footer {
     background-color: rgb(168, 165, 0);
 }
 
+.show-owner i {
+    margin: 1rem 0rem;
+    font-size: 1.65rem;
+    color: black;
+}
+
+.show-review{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.7rem 0rem;
+}
+
+.show-review i {
+    font-size: 1.3rem;
+}
+
+.show-review a {
+    font-size: 1.3rem;
+}
+
 /* error.ejs */
 
 .error-cont {
@@ -276,12 +430,21 @@ footer {
     font-size: 1.2rem;
 }
 
-h4 {
-    font-size: 1.6rem;
-    margin: 20px 0px;
+.review-author h4 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.35rem;
+    margin: 0;
+    color: rgb(109, 109, 109);
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    margin: 1.2rem 0rem;
 }
 
 .review-author {
@@ -289,7 +452,20 @@ h4 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 0.2rem;
+    gap: 0.45rem;
+    padding-bottom: 0.69rem;
+}
+
+.review-author i {
+    color: rgb(109, 109, 109);
+    opacity: 0.9;
+    font-size: 1.75rem;
+}
+
+.review-comment {
+    padding-bottom: 0.69rem;
+    opacity: 0.85;
+    line-height:1.45 ;
 }
 
 .rating {
@@ -328,22 +504,42 @@ h4 {
 .review-show-cont {
     box-sizing: border-box;
     padding: 1rem 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .review-card {
-    border: 1px solid black;
-    padding: 0.7rem 1.8rem;
+    border: 0.5px solid black;
+    padding: 0.7rem 2rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: self-start;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
     border-radius: 9px;
     font-size: 1.3rem;
+    position: relative;
 }
+
+.review-card button {
+    margin: 0.5rem 0rem;
+}
+
+.review-rating {
+    position: absolute;
+    right: 1rem;
+}
+
+.review-date {
+    font-weight: bold;
+}
+
+/* review stars */
+legend {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
 
 /* flash message */
 .flash {
@@ -413,8 +609,24 @@ h4 {
     position: relative;
 }
 
-/* review stars */
-legend {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
+/* filter panel  */
+
+.filter-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 2rem 1.8rem;
+}
+
+.filter {
+    text-align: center;
+    margin: 0rem 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.filter i {
+    font-size: 1.5rem;
 }

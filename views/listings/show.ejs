@@ -22,8 +22,30 @@
                 <div class="show-img">
                     <img src="<%= listing.image.url %>" alt="">
                 </div>
-                <ul class="show-body">
 
+                <ul class="show-body">
+                    <div class="show-review">
+                        <% if (listing.avgRating !==null) { const fullStars=Math.floor(listing.avgRating); const
+                            halfStar=listing.avgRating - fullStars>= 0.5;
+                            const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+                            %>
+                            <span class="card-star">
+                                <% for (let i=0; i < fullStars; i++) { %>
+                                    <i class="fa-solid fa-star"></i>
+                                    <% } %>
+                                        <% if (halfStar) { %>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                            <% } %>
+                                                <% for (let i=0; i < emptyStars; i++) { %>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <% } %>
+                                                        <a href="#review">
+                                                            <%= listing.totalReviews %> <i
+                                                                    class="fa-solid fa-caret-down"></i>
+                                                        </a>
+                            </span>
+                            <% } %>
+                    </div>
                     <div class="show-owner">
                         <span><i class="fa-solid fa-circle-user"></i></span>
                         <span><b><i>
@@ -58,15 +80,15 @@
                 </div>
             </div>
 
-            <div class="review">
+            <div class="review" id="review">
                 <div class="review-cont">
                     <h4>Leave a Review</h4>
                     <form action="/listings/<%= listing._id %>/reviews" method="POST">
                         <div class="rating">
                             <fieldset class="starability-heartbeat">
                                 <legend>Rating:</legend>
-                                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
-                                    aria-label="No rating." />
+                                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1"
+                                    checked aria-label="No rating." />
                                 <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                                 <label for="first-rate1" title="Terrible">1 star</label>
                                 <input type="radio" id="first-rate2" name="review[rating]" value="2" />
@@ -90,35 +112,44 @@
 
                     </form>
                 </div>
-
                 <div class="review-show">
-                    <h4>Customer Reviews</h4>
-                    <div class="review-show-cont">
+                    <% if(listing.reviews.length> 0) { %>
+                        <h4>Customer Reviews</h4>
+                        <div class="review-show-cont">
 
-                        <% for(review of listing.reviews) { %>
-                            <div class="review-card">
-                                <div class="review-author">
-                                    <i class="fa-solid fa-circle-user"></i>
-                                    <h4><%- review.author.username %></h4>
-                                </div>
-                                <div class="review-comment">
-                                    <%- review.comment %>
-                                </div>
-                                <div class="review-rating">
-                                    <p class="starability-result" data-rating="<%- review.rating %>">
-                                    </p>
-                                </div>
-                                <% if(currUser && currUser._id.equals(review.author._id)) { %>
-                                    <form method="POST"
-                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
-                                        <button class="del-btn ">Delete</button>
-                                    </form>
-                                    <% } %>
+                            <% for(review of listing.reviews) { %>
+                                <div class="review-card">
+                                    <div class="review-author">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        <h4><%- review.author.username %></h4>
+                                    </div>
+                                    <div class="review-comment">
+                                        <%- review.comment %>
+                                    </div>
+                                    <div class="review-rating">
+                                        <p class="starability-result" data-rating="<%- review.rating %>"> </p>
+                                    </div>
+                                    <div class="review-date">
+                                        <%= new Date(review.createdAt).toLocaleDateString('en-US', { year: 'numeric' ,
+                                            month: 'short' , day: 'numeric' }) %>
+                                    </div>
+                                    <% if(currUser && currUser._id.equals(review.author._id)) { %>
 
-                            </div>
+                                        <form method="POST"
+                                            action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                                            <button class="del-btn ">Delete</button>
+                                        </form>
+                                        <% } %>
+
+                                </div>
+                                <% } %>
+
+                        </div>
+                        <% } else { %>
+                            <h4>No Reviews Yet</h4>
                             <% } %>
-                    </div>
                 </div>
+
             </div>
             <%- include('../includes/footer.ejs') %>
 </body>

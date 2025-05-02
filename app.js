@@ -76,8 +76,8 @@ app.listen(8080, () => {
 })
 
 //index route
-app.get("/", (req, res) => {
-    res.send("Home page")
+app.get("/aboutus", (req, res) => {
+    res.send("About us page")
 })
 
 // Listing Route

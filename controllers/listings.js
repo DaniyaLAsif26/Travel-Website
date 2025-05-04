@@ -58,7 +58,7 @@ module.exports.createListing = async (req, res, next) => {
 //             day: 'numeric'
 //         });
 //     });
-    
+
 //     listing = listing.map((listing) => {
 //         const reviews = listing.reviews;
 //         const total = reviews.length;
@@ -129,27 +129,33 @@ module.exports.editForm = async (req, res, next) => {
     res.render("listings/edit.ejs", { listing })
 }
 
-//update route
-module.exports.updateForm = async (req, res, next) => {
+//serach route
+module.exports.searchListing = async (req, res) => {
+    const searchTerm = req.query.q || "";
+    const terms = searchTerm.trim().split(/\s*,?\s+/); // Split by comma or space
 
-    let { id } = req.params
-    let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing })
+    const regexConditions = terms.map(term => ({
+        $or: [
+            { title: { $regex: term, $options: "i" } },
+            { location: { $regex: term, $options: "i" } },
+            { country: { $regex: term, $options: "i" } }
+        ]
+    }));
 
-    if (typeof req.file !== "undefined") {
-        let url = req.file.path
-        let filename = req.file.filename
-        newListing.image = { url, filename }
-        await listing.save()
-    }
+    const foundListings = await Listing.find({ $and: regexConditions }).populate("reviews");
 
-    req.flash("success", "Successfully edited listing")
-    res.redirect(`/listings/${id}`)
-}
+    const allListings = foundListings.map(listing => {
+        const total = listing.reviews.length;
+        const avg = total > 0
+            ? (listing.reviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1)
+            : null;
 
-//delete route
-module.exports.deleteListing = async (req, res, next) => {
-    let { id } = req.params
-    await Listing.findByIdAndDelete(id)
-    req.flash("success", "listing deleted successfully")
-    res.redirect("/listings")
-}
+        return {
+            ...listing.toObject(),
+            avgRating: avg,
+            totalReviews: total
+        };
+    });
+
+    res.render("listings/search.ejs", { allListings,  searchTerm});
+};

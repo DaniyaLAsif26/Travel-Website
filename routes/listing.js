@@ -3,7 +3,7 @@ const router = express.Router();
 
 const wrapAsync = require("../utils/wrapAsync.js")
 
-// const Listing = require("../models/listing.js")
+const Listing = require("../models/listing.js")
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 
 const listingController = require("../controllers/listings.js")
@@ -22,7 +22,7 @@ router
         wrapAsync(listingController.createListing)//create route
     )
 
-
+router.get("/search", wrapAsync(listingController.searchListing))//search route
 //new route
 router.get("/new", isLoggedIn, (req, res) => {
     res.render("listings/new.ejs")

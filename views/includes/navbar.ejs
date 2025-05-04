@@ -4,9 +4,11 @@
         <a href="/listings">Explore</a>
     </div>
     <div class="nav-center">
-        <form action="" role="search">
-            <div class=""> <input type="search"> </div>
-            <div class=""> <button class="srch-btn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+        <form action="/listings/search" method="GET" role="search">
+            <input type="search" name="q" placeholder="Search ..." aria-label="Search">
+            <button type="submit" class="srch-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </form>
     </div>
     <div class="nav-right">
@@ -19,7 +21,9 @@
             <div class="drop-down">
                 <% if(currUser) { %>
                     <div class="drop-username">
-                        Hello, <b><%= currUser.username %></b>
+                        Hello, <b>
+                            <%= currUser.username %>
+                        </b>
                     </div>
                     <div class="line"></div>
                     <% } %>
@@ -38,5 +42,5 @@
             </div>
         </div>
     </div>
-    
+
 </nav>

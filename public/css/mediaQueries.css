@@ -1,0 +1,659 @@
+@media screen and (max-width: 2580px) {
+    .card-cont {
+        gap: 1rem;
+    }
+
+    .nav-center form input {
+        width: 36rem;
+    }
+}
+
+@media screen and (max-width: 1660px) {
+    .card-cont {
+        gap: 0.6rem;
+    }
+
+    .nav-center form input {
+        width: 26rem;
+    }
+
+    .review {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .comment textarea {
+        height: 18rem;
+        width: 50rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .card-cont {
+        gap: 0.75rem;
+    }
+
+    .nav-left {
+        margin-left: 1rem;
+    }
+
+    .starability-result {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .nav-1-a {
+        margin-left: 0.7rem;
+    }
+
+    .nav-2-a {
+        margin-right: 0.3rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .user-icon {
+        margin-right: 1.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .nav-center input {
+        width: 20rem;
+    }
+
+    .nav-1-a {
+        margin-left: 0.3rem;
+    }
+
+    .nav-2-a {
+        margin-right: 0.1rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+
+    .card-cont {
+        gap: 1rem;
+    }
+
+    .nav-left img {
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+
+    .nav-left {
+        margin-right: 5.3rem;
+    }
+
+    .nav-left img {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-cont {
+        display: block;
+        height: 100%;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+    }
+
+    .nav-center {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-bottom: 0.15rem;
+    }
+
+    .nav-center form {
+        margin: 0rem 2rem 0rem 4.3rem;
+    }
+
+
+    .nav-right {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        margin: 1rem 2rem;
+    }
+
+    .drop-down{
+        right: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .show-cont {
+        margin: 0rem 2rem;
+    }
+
+    .show-img img {
+        width: 52.5rem;
+    }
+
+    .show-body {
+        margin-right: 0;
+        width: 52rem;
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+    .nav-center form input {
+        width: 22rem;
+    }
+
+    .nav-cont {
+        padding: 1rem 1rem;
+
+    }
+
+    .show-description {
+        font-size: 1.25rem;
+    }
+
+    .show-owner i {
+        font-size: 1.4rem;
+    }
+
+    .card-star i {
+        font-size: 1.1rem;
+    }
+
+    .card-star a {
+        font-size: 1.1rem;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    .show-img img {
+        height: 26rem;
+        width: 50.5rem;
+    }
+
+    .show-body {
+        width: 49rem;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .nav-cont {
+        padding: 1rem 0rem;
+
+    }
+
+    .nav-1-a {
+        margin-left: 0.5rem;
+    }
+
+    .nav-2-a {
+        margin-right: 0;
+    }
+
+    .show-cont {
+        margin: 0rem 1rem;
+    }
+
+    .show-img img {
+        width: 47rem;
+    }
+
+    .show-body {
+        width: 46rem;
+    }
+
+    .comment textarea {
+        height: 15rem;
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 785px) {
+    .nav-1-a {
+        display: none;
+    }
+
+    .nav-2-a {
+        display: none;
+    }
+
+    .nav-left {
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .nav-center form input {
+        width: 27rem;
+        margin-left: 4rem;
+    }
+
+    .nav-center {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .nav-center form {
+        margin: 0;
+    }
+
+    .nav-right {
+        width: 20%;
+        position: relative;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .after-cont {
+        display: block;
+    }
+
+    .card {
+        width: 17rem;
+    }
+
+    .card-cont {
+        padding: 1.5rem 1rem;
+    }
+
+    .show-img img {
+        width: 45rem;
+    }
+
+    .show-body {
+        width: 44rem;
+    }
+
+    .drop-down{
+        right: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 726px) {
+    .show-cont {
+        margin: 0rem 0.45rem;
+    }
+
+    .show-img img {
+        width: 40rem;
+    }
+
+    .show-body {
+        width: 38rem;
+    }
+
+    .review-author i {
+        font-size: 1.5rem;
+    }
+
+    .review-author h4 {
+        font-size: 1.2rem;
+    }
+
+    .review-comment {
+        font-size: 1.15rem;
+    }
+
+    .review-date {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .nav-center form input {
+        margin-left: 2rem;
+    }
+
+    .footer-cont {
+        display: grid;
+        grid-template-rows: 1.2fr 1.2fr 1.2fr;
+        grid-template-columns: 100%;
+    }
+
+    .foot-sec {
+        padding: 1.5rem 1rem;
+    }
+
+    .flash {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 615px) {
+    .nav-center form input {
+        width: 24rem;
+        margin-left: 1rem;
+    }
+
+    .user-icon {
+        margin-right: 1.5rem;
+    }
+
+    .card-cont {
+        padding: 1.5rem 0rem;
+    }
+
+    .show-img img {
+        width: 30rem;
+    }
+
+    .show-body {
+        width: 28rem;
+    }
+
+    .comment textarea {
+        height: 13rem;
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .nav-center form input {
+        width: 22rem;
+        margin-left: 0.5rem;
+    }
+
+    .user-icon {
+        margin-right: 1rem;
+    }
+
+    .card-cont {
+        padding: 1.5rem 1rem;
+    }
+
+
+
+    .signup-cont {
+        width: 28rem;
+        box-sizing: border-box;
+        margin: 2rem;
+        padding: 1rem;
+    }
+
+    .form-control input {
+        width: 20rem;
+    }
+
+    .form-control #image {
+        width: 22rem;
+    }
+
+    .form-control textarea {
+        width: 22rem;
+    }
+
+    .outer-cont {
+        margin-bottom: 2rem;
+    }
+
+    .show-country,
+    .show-location,
+    .show-price {
+        grid-template-columns: 10% 90%;
+    }
+
+}
+
+@media screen and (max-width: 530px) {
+    .nav-right {
+        position: absolute;
+        top: 1.3rem;
+
+    }
+
+    .nav-center {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .fa-circle-user {
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    .show-img img {
+        width: 25rem;
+    }
+
+    .show-body {
+        width: 22rem;
+    }
+
+    .comment textarea {
+        height: 13rem;
+        width: 26rem;
+    }
+}
+
+@media screen and (max-width: 469px) {
+    .signup-cont {
+        width: 24rem;
+    }
+
+    .form-control input {
+        width: 18rem;
+    }
+
+    .form-control #image {
+        width: 20rem;
+    }
+
+    .form-control textarea {
+        width: 20rem;
+    }
+
+    .review-rating {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .review-author {
+        flex-direction: column;
+    }
+
+    .starability-result {
+        transform: scale(0.8);
+    }
+
+    .drop-down{
+        right: 1rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .nav-left {
+        justify-content: flex-start;
+    }
+
+    .nav-right {
+        margin-right: 1rem;
+    }
+
+    .nav-left img {
+        margin-right: 1.2rem;
+    }
+
+    .nav-center form input {
+        width: 19rem;
+    }
+
+    .after-cont {
+        margin: 0.5rem 1.5rem;
+    }
+
+    .signup-cont {
+        width: 22rem;
+    }
+
+    .show-img img {
+        width: 23rem;
+    }
+
+    .show-body {
+        width: 21rem;
+    }
+
+    .comment textarea {
+        height: 12rem;
+        width: 22rem;
+    }
+
+    .show-title {
+        font-size: 1.75rem;
+    }
+
+    .review-card {
+        padding: 0.5rem 1rem;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    .nav-link-after {
+        gap: 1rem;
+    }
+
+    .nav-center form input {
+        width: 16rem;
+    }
+
+    .footer-cont {
+        padding: 0rem 2.69rem;
+    }
+
+    .signup-cont {
+        width: 20rem;
+        margin: 1rem;
+        padding: 1rem 0.26rem;
+    }
+
+    .form-control input {
+        width: 14rem;
+    }
+
+    .form-control #image {
+        width: 16rem;
+    }
+
+    .form-control textarea {
+        width: 16rem;
+    }
+
+    .show-img img {
+        width: 20rem;
+        height: 22rem;
+    }
+
+    .show-body {
+        width: 18rem;
+    }
+
+    .comment textarea {
+        width: 20rem;
+    }
+
+    .show-title {
+        font-size: 1.5rem;
+    }
+
+    .starability-result {
+        transform: scale(0.75);
+    }
+
+    .drop-down{
+        right: 0.3rem;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .after-cont {
+        margin: 0.5rem 0.7rem;
+    }
+
+    .nav-link-after {
+        gap: 0.5rem;
+    }
+
+    .nav-left img {
+        margin-right: 0.25rem;
+    }
+
+    .nav-right {
+        margin-right: 1.5rem;
+    }
+
+    .signup-cont {
+        width: 18rem;
+        margin: 0.5rem;
+    }
+
+    .review-card {
+        border: 0.5px solid black;
+        padding: 0.5rem 1rem;
+    }
+
+    .starability-result {
+        transform: scale(0.7);
+    }
+
+}
+
+@media screen and (max-width: 326px) {
+    .nav-left img {
+        width: 13rem;
+    }
+
+    .nav-center form input {
+        width: 14rem;
+    }
+
+    .card img {
+        height: 16.5rem;
+    }
+
+    .nav-link-after a {
+        text-decoration: none;
+        margin: 0rem 0.45rem;
+    }
+
+    .signup-cont {
+        margin: 0;
+        padding: 1rem 0.1rem;
+    }
+
+    .show-img img {
+        width: 17.5rem;
+        height: 20rem;
+    }
+
+    .show-body {
+        width: 16rem;
+    }
+
+    .comment textarea {
+        width: 17rem;
+    }
+
+    .show-review {
+        padding: 0.4rem 0rem;
+    }
+
+    .card-star i {
+        font-size: 1rem;
+    }
+
+    .card-star a {
+        font-size: 1rem;
+    }
+
+    .review-card {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .drop-down{
+        right: 0rem;
+    }
+
+}

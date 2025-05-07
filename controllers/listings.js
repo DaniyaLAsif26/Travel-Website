@@ -34,48 +34,6 @@ module.exports.createListing = async (req, res, next) => {
     res.redirect(`/listings/${newListing._id}`)
 }
 
-//show route
-// module.exports.showListing = async (req, res, next) => {
-//     let { id } = req.params
-//     const listing = await Listing.findById(id)
-//         .populate({
-//             path: "reviews",
-//             populate: {
-//                 path:
-//                     "author"
-//             },
-//         })
-//         .populate("owner")
-//     if (!listing) {
-//         req.flash("error", "Cannot find listing")
-//         res.redirect("/listings")
-//     }
-
-//     const dates = listing.reviews.map(review => {
-//         return review.createdAt.toLocaleDateString('en-US', {
-//             year: 'numeric',
-//             month: 'short',
-//             day: 'numeric'
-//         });
-//     });
-
-//     listing = listing.map((listing) => {
-//         const reviews = listing.reviews;
-//         const total = reviews.length;
-//         const avg = total > 0
-//             ? (reviews.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1)
-//             : null;
-
-//         return {
-//             ...listing.toObject(),
-//             avgRating: avg,
-//             totalReviews: total
-//         };
-//     });
-
-//     res.render("listings/show.ejs", { listing, dates })
-// }
-
 module.exports.showListing = async (req, res, next) => {
     let { id } = req.params;
     let listing = await Listing.findById(id)

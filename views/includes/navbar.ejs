@@ -1,46 +1,59 @@
-<nav class="navbar">
+<nav class="nav-cont">
     <div class="nav-left">
-        <div class="logo"><a href="/listings"><img src="/assets/logo.png" alt=""></a></div>
-        <a href="/listings">Explore</a>
-    </div>
-    <div class="nav-center">
-        <form action="/listings/search" method="GET" role="search">
-            <input type="search" name="q" placeholder="Search ..." aria-label="Search">
-            <button type="submit" class="srch-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </form>
-    </div>
-    <div class="nav-right">
-        <a href="/listings/new">Rent out your home</a>
-        <div class="user-icon">
-            <i class="fa-solid fa-bars"></i>
-            <i class="fa-solid fa-circle-user"></i>
+        <div class="logo">
+            <a href="/listings">
+                <img src="/assets/logo.png" alt="">
+            </a>
         </div>
-        <div class="drop">
-            <div class="drop-down">
-                <% if(currUser) { %>
-                    <div class="drop-username">
-                        Hello, <b>
-                            <%= currUser.username %>
-                        </b>
-                    </div>
-                    <div class="line"></div>
-                    <% } %>
-                        <% if(!currUser) { %>
-                            <a href="/user/login">Log in</a>
-                            <a href="/user/signup">Sign Up</a>
-                            <div class="line"></div>
-                            <% } %>
-                                <div class="about"><a href="/aboutus">About us</a></div>
-                                <a href="/aboutus">Help center</a>
+    </div>
+    <div class="nav-combined">
+        <div class="nav-center">
+            <div class="nav-1-a"><a href="/listings">Explore</a></div>
+            <div class="nav-search">
+                <form action="/listings/search" method="GET" role="search">
+                    <input type="search" name="q" placeholder="Search ..." aria-label="Search">
+                    <button type="submit" class="srch-btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="nav-2-a"><a href="/listings/new">Rent out your home</a></div>
+        </div>
+        <div class="nav-right">
+            <div class="user-icon">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <div class="drop">
+                <div class="drop-down">
+                    <% if(currUser) { %>
+                        <div class="drop-username">
+                            Hello, <b>
+                                <%= currUser.username %>
+                            </b>
+                        </div>
+                        <div class="line"></div>
+                        <% } %>
+                            <% if(!currUser) { %>
+                                <a href="/user/login">Log in</a>
+                                <a href="/user/signup">Sign Up</a>
+                                <div class="line"></div>
+                                <% } %>
+                                    <div class="about"><a href="/aboutus">About us</a></div>
+                                    <a href="/aboutus">Help center</a>
 
-                                <% if(currUser) { %>
-                                    <div class="line"></div>
-                                    <a href="/user/logout" class="logout">Log out</a>
-                                    <% } %>
+                                    <% if(currUser) { %>
+                                        <div class="line"></div>
+                                        <a href="/user/logout" class="logout">Log out</a>
+                                        <% } %>
+                </div>
             </div>
         </div>
     </div>
-
+    <div class="after-cont">
+        <div class="nav-link-after">
+            <div class="nav-1-after"><a href="/listings">Explore</a></div>
+            <div class="nav-2-after"><a href="/listings/new">Rent out your home</a></div>
+        </div>
+    </div>
 </nav>

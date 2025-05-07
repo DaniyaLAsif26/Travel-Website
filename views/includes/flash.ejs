@@ -1,14 +1,19 @@
-<% if (success && success.length) { %>
+<div class="flash-cont">
+    <% if (success && success.length) { %>
+        <div class="flash flash-success">
+            <div class="">
+                <%= success %>
+            </div>
+            <button onclick="closeMessage(this)"> X </button>
+        </div>
+        <% } %>
 
-<div class="flash flash-success">
-    <div class="">  <%= success %> </div>
-   <button onclick="closeMessage(this)"> X </button>
+            <% if (error && error.length) { %>
+                <div class="flash flash-error">
+                    <div class="">
+                        <%= error %>
+                    </div>
+                    <button onclick="closeMessage(this)"> X </button>
+                </div>
+                <% } %>
 </div>
-<% } %>
-
-<% if (error && error.length) { %>
-<div class="flash flash-error">
-    <div class="">  <%= error  %> </div>
-    <button onclick="closeMessage(this)"> X </button>
-</div>
-<% } %>

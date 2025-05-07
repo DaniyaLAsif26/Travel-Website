@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= listing.title %>
+        Musafir - <%= listing.title %>
     </title>
     <%- include('../includes/links.ejs') %>
 </head>
@@ -15,7 +15,7 @@
 
         <%- include('../includes/flash.ejs') %>
 
-            <h1>
+            <h1 class="show-title">
                 <%= listing.title %>
             </h1>
             <div class="show-cont">
@@ -120,15 +120,20 @@
                             <% for(review of listing.reviews) { %>
                                 <div class="review-card">
                                     <div class="review-author">
-                                        <i class="fa-solid fa-circle-user"></i>
-                                        <h4><%- review.author.username %></h4>
+                                        <div class="review-creator">
+                                            <i class="fa-solid fa-circle-user"></i>
+                                            <h4><%- review.author.username %></h4>
+                                        </div>
+                                        <div class="review-rating">
+                                            <p class="starability-result" data-rating="<%= review.rating %>"> </p>
+                                        </div>
                                     </div>
                                     <div class="review-comment">
                                         <%- review.comment %>
                                     </div>
-                                    <div class="review-rating">
-                                        <p class="starability-result" data-rating="<%- review.rating %>"> </p>
-                                    </div>
+                                    <!-- <div class="review-rating">
+                                        <p class="starability-result" data-rating="<%= review.rating %>"> </p>
+                                    </div> -->
                                     <div class="review-date">
                                         <%= new Date(review.createdAt).toLocaleDateString('en-US', { year: 'numeric' ,
                                             month: 'short' , day: 'numeric' }) %>

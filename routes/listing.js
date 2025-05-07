@@ -23,10 +23,10 @@ router
     )
 
 router.get("/search", wrapAsync(listingController.searchListing))//search route
-//new route
-router.get("/new", isLoggedIn, (req, res) => {
-    res.render("listings/new.ejs")
 
+//new route
+router.get("/new",isLoggedIn, (req, res) => {
+    res.render("listings/new.ejs")
 })
 
 router
@@ -42,6 +42,5 @@ router
 
 //edit route
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.editForm))
-
 
 module.exports = router;

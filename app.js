@@ -96,6 +96,11 @@ app.get("/aboutus", (req, res) => {
     res.send("About us page")
 })
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
+
 // Listing Route
 const listingsRouter = require("./routes/listing.js")
 app.use("/listings", listingsRouter)

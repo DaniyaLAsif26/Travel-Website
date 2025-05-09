@@ -117,3 +117,22 @@ module.exports.searchListing = async (req, res) => {
 
     res.render("listings/search.ejs", { allListings,  searchTerm});
 };
+
+module.exports.updateForm = async (req, res, next) => {
+    const { id } = req.params;
+    const listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+    if (req.file) {
+        listing.image = { url: req.file.path, filename: req.file.filename };
+    }
+    await listing.save();
+    req.flash("success", "Listing updated successfully");
+    res.redirect(`/listings/${id}`);
+};
+
+// delete route handler
+module.exports.deleteListing = async (req, res, next) => {
+    const { id } = req.params;
+    await Listing.findByIdAndDelete(id);
+    req.flash("success", "Listing deleted successfully");
+    res.redirect("/listings");
+};

@@ -1,6 +1,8 @@
-    if(process.env.NODE_ENV !== "production") { 
-        require("dotenv").config()
-    }  
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config()
+}
+
+const dbUrl = process.env.ATLAS_DB
 
 const express = require("express")
 const app = express()
@@ -12,7 +14,23 @@ const expressError = require("./utils/expressError.js")
 const flash = require("connect-flash")
 app.use(flash())
 
+const session = require("express-session")
+const MongoStore = require('connect-mongo');
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: "abc123"
+    },
+    touchAfter: 24 * 60 * 60,
+});
+
+store.on("error", function (e) {
+    console.log("session store error", e)
+})
+
 const sessionOptions = {
+    store,
     secret: "abc123",
     resave: false,
     saveUninitialized: true,
@@ -22,8 +40,6 @@ const sessionOptions = {
         maxAge: 7 * 24 * 60 * 60 * 1000,
     },
 }
-
-const session = require("express-session")
 app.use(session(sessionOptions))
 
 const methodOverride = require("method-override")
@@ -50,9 +66,9 @@ app.use('/assets', express.static('assets'));
 
 // mongoDB
 const mongoose = require("mongoose")
-const MONGO_URL = "mongodb://127.0.0.1:27017/musafir"
+// const MONGO_URL = "mongodb://127.0.0.1:27017/musafir"
 async function main() {
-    await mongoose.connect(MONGO_URL)
+    await mongoose.connect(dbUrl)
 }
 main()
     .then(() => {

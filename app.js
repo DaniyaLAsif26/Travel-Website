@@ -20,7 +20,7 @@ const MongoStore = require('connect-mongo');
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     crypto: {
-        secret: "abc123"
+        secret: process.env.SECRET,
     },
     touchAfter: 24 * 60 * 60,
 });
@@ -31,7 +31,7 @@ store.on("error", function (e) {
 
 const sessionOptions = {
     store,
-    secret: "abc123",
+    secret:process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
